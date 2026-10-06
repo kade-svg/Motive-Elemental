@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f6f6f4">
+  <meta name="description" content="Motive Elements — weather, thoughtfully made.">
+  <title>Motive Elements</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#" id="brandHome" aria-label="Motive Elements home">
+      <span class="brand-symbol" aria-hidden="true">✦</span>
+      <span class="brand-name">Motive <b>Elements</b></span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#today">Today</a>
+      <a href="#hourly">Hourly</a>
+      <a href="#forecast">Forecast</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="themeToggle" class="round-button" aria-label="Toggle appearance" title="Toggle appearance">☼</button>
+      <button id="unitToggle" class="unit-button" aria-label="Switch temperature unit">°C</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro section-pad" id="today">
+      <div class="kicker">MOTIVE ELEMENTS</div>
+      <h1>Weather,<br><span>thoughtfully made.</span></h1>
+      <p class="lead">A calmer way to see what's happening outside.</p>
+
+      <form id="searchForm" class="search" autocomplete="off">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="Search a city…" aria-label="Search a city">
+        <button type="submit">Search</button>
+      </form>
+      <div id="searchResults" class="search-results" hidden></div>
+
+      <div class="location-row">
+        <button id="locateButton" class="text-button">Use my location →</button>
+        <span id="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section class="weather-panel section-pad" aria-live="polite">
+      <div class="weather-card">
+        <div class="card-top">
+          <div>
+            <div id="region" class="label">YOUR WEATHER</div>
+            <h2 id="locationName">Loading…</h2>
+            <p id="updated">Getting current conditions</p>
+          </div>
+          <div id="conditionIcon" class="condition-icon">☀️</div>
+        </div>
+
+        <div class="temperature"><span id="temperature">--</span><sup id="degree">°C</sup></div>
+        <div id="condition" class="condition">—</div>
+
+        <div class="stats">
+          <div><span>Feels like</span><strong id="feels">—</strong></div>
+          <div><span>Humidity</span><strong id="humidity">—</strong></div>
+          <div><span>Wind</span><strong id="wind">—</strong></div>
+          <div><span>UV index</span><strong id="uv">—</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-section section-pad" id="hourly">
+      <div class="section-header">
+        <div>
+          <div class="kicker">THE NEXT 24 HOURS</div>
+          <h2>Hourly.</h2>
+        </div>
+        <div id="sun" class="section-note"></div>
+      </div>
+      <div id="hourlyList" class="hourly-scroll"></div>
+    </section>
+
+    <section class="feature-section section-pad" id="forecast">
+      <div class="section-header">
+        <div>
+          <div class="kicker">THE WEEK AHEAD</div>
+          <h2>Forecast.</h2>
+        </div>
+      </div>
+      <div id="dailyList" class="daily-grid"></div>
+    </section>
+
+    <section class="manifesto section-pad" id="about">
+      <div class="kicker">THE IDEA</div>
+      <h2>Less clutter.<br><span>More of what matters.</span></h2>
+      <p>Every Motive product starts with a simple question: can this be made clearer, calmer, and genuinely useful?</p>
+      <div class="element-strip">
+        <div><span>01</span><b>LIGHT</b></div>
+        <div><span>02</span><b>AIR</b></div>
+        <div><span>03</span><b>WATER</b></div>
+        <div><span>04</span><b>EARTH</b></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section-pad">
+    <div><div class="footer-brand">✦ Motive Elements</div><p>Weather, thoughtfully made.</p></div>
+    <div class="footer-meta">Weather data by Open-Meteo<br>© 2026 Motive Labs</div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
